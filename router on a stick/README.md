@@ -1,15 +1,15 @@
 # Inter-VLAN Routing (Router-on-a-Stick) with Dynamic DHCP Addressing
 
-## 📌 Project Overview
+## Project Overview
 This project demonstrates a scalable **Inter-VLAN routing** architecture using the **Router-on-a-Stick (ROAS)** design across a multi-switch corporate topology. To optimize network operations and administrative overhead, the central router is configured as a native **Cisco IOS DHCP Server**, dynamically provisioning IP configurations to endpoints across segregated department subnets.
 
-## 🛠️ Network Architecture & Design Constraints
+## Network Architecture & Design Constraints
 * **Core Topology:** 1 Central Cisco Router, 3 Interconnected Layer 2 Switches, and end-user host machines segmented by function.
 * **Segmentation & Branding:** Broadcast domains split into **VLAN 10 (HR)** and **VLAN 20 (IT)**.
 * **Encapsulation Protocol:** IEEE 802.1Q trunking links across switches and the router uplink.
 * **IP Allocation:** Automated via localized DHCP pools with exclusion ranges to protect static gateway boundaries.
 
-### 📋 IP Addressing & Trunking Schema
+### IP Addressing & Trunking Schema
 
 | VLAN | Subnet / Network | Department | Router Subinterface | Default Gateway | DHCP Pool Scope |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -18,7 +18,7 @@ This project demonstrates a scalable **Inter-VLAN routing** architecture using t
 
 ---
 
-## ⚙️ Core Configuration Highlights
+## Core Configuration Highlights
 
 ### 1. Cisco IOS DHCP Pool Configurations
 Configured on the central router to automatically assign IP addresses, subnet masks, and default gateways while excluding the first 10 addresses for network infrastructure safety:
@@ -68,7 +68,7 @@ interface GigabitEthernet0/1
 
 ---
 
-## 🔍 Verification & Testing Documentation
+## Verification & Testing Documentation
 To ensure network functionality, the following verification commands were executed:
 
 * **DHCP Lease Binding Inspection:** Checked active IP assignments via `show ip dhcp binding` to verify endpoints successfully received operational parameters.
@@ -77,7 +77,7 @@ To ensure network functionality, the following verification commands were execut
 
 ---
 
-## 🧳 Skills & Technologies Demonstrated
+## Skills & Technologies Demonstrated
 * **IP Infrastructure Services:** Cisco IOS DHCP Server Configuration, IP Address Exclusions
 * **Routing Architectures:** Router-on-a-Stick, Layer 3 Logical Subinterfaces
 * **Switching & Layer 2 Protocols:** IEEE 802.1Q Trunking, Multi-Switch VLAN Propagation
