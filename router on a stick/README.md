@@ -24,18 +24,18 @@ This project demonstrates a scalable **Inter-VLAN routing** architecture using t
 Configured on the central router to automatically assign IP addresses, subnet masks, and default gateways while excluding the first 10 addresses for network infrastructure safety:
 
 ```cisco
-! Exclude static infrastructure addresses from allocation
-ip dhcp excluded-address 192.168.10.1 192.168.10.10
-ip dhcp excluded-address 192.168.20.1 192.168.20.10
+! Exclude static gateway IP boundaries from dynamic allocation
+ip dhcp excluded-address 192.168.10.1
+ip dhcp excluded-address 192.168.20.1
 
-! DHCP Pool Definition for VLAN 10 (HR)
-ip dhcp pool HR_POOL
+! DHCP Pool Definition for VLAN 10
+ip dhcp pool VLAN10_POOL
  network 192.168.10.0 255.255.255.0
  default-router 192.168.10.1
  dns-server 8.8.8.8
 
-! DHCP Pool Definition for VLAN 20 (IT)
-ip dhcp pool IT_POOL
+! DHCP Pool Definition for VLAN 20
+ip dhcp pool VLAN20_POOL
  network 192.168.20.0 255.255.255.0
  default-router 192.168.20.1
  dns-server 8.8.8.8
