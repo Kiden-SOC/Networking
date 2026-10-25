@@ -98,27 +98,14 @@ ip dhcp pool VLAN20_POOL
 
 ---
 
-## Verification & Test Results
-
-### Configuration checks
-
-| Check | Command | Result |
-| :--- | :--- | :--- |
-| VLANs and port membership | `show vlan brief` | ![](screenshots/show-vlan-brief.png) |
-| Trunk status | `show interfaces trunk` | ![](screenshots/show-interfaces-trunk.png) |
-| DHCP leases | `show ip dhcp binding` | ![](screenshots/show-dhcp-binding.png) |
-| Routing table | `show ip route` | ![](screenshots/show-ip-route.png) |
-
-All 18 hosts received a lease (9 in each VLAN), confirming that DHCP requests reach the router across all three switches. The routing table shows both subnets as directly connected through the subinterfaces.
-
 ### Connectivity tests
 
 | Test | Proves | Evidence |
 | :--- | :--- | :--- |
-| **Same VLAN, across switches** (e.g. S1 host to S2 host) | VLAN propagation over the 802.1Q trunks | ![](screenshots/ping-same-vlan-cross-switch.png) |
-| **Different VLAN, same switch** (HR to IT on S1) | Router-on-a-stick inter-VLAN routing | ![](screenshots/ping-cross-vlan-same-switch.png) |
-| **Different VLAN, across switches** | Routing and trunking together | ![](screenshots/ping-cross-vlan-cross-switch.png) |
-| **`tracert` to a host in the other VLAN** | Traffic passes through the router gateway | ![](screenshots/tracert.png) |
+| **Same VLAN, across switches** (e.g. S1 host to S2 host) | VLAN propagation over the 802.1Q trunks | ![](screenshots/same-vlan-ping.png) |
+| **Different VLAN, same switch** (HR to IT on S1) | Router-on-a-stick inter-VLAN routing | ![](screenshots/cross-vlan-ping-same-switch.png) |
+| **Different VLAN, across switches** | Routing and trunking together | ![](images/cross-vlan-ping.png) |
+| **`tracert` to a host in the other VLAN** | Traffic passes through the router gateway | ![](images/tracert.png) |
 
 **Reading the results**
 * A cross-VLAN reply shows `TTL=127`: the host starts at 128 and the router decrements it once. Same-VLAN replies show `TTL=128` because no router is involved.
