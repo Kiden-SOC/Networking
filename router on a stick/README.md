@@ -5,7 +5,7 @@ This project demonstrates **inter-VLAN routing** using the **Router-on-a-Stick (
 
 ## Topology
 
-![Network Topology](topology/topology.png)
+![Network Topology](images/topology.png)
 
 * **Devices:** 1 router, 3 Layer 2 switches (S1, S2, S3), 18 end hosts (6 per switch)
 * **Segmentation:** **VLAN 10 (HR)** and **VLAN 20 (IT)**
