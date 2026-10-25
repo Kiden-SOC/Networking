@@ -136,13 +136,13 @@ All 18 hosts received a lease (9 in each VLAN), confirming that DHCP requests re
 .
 ├── README.md
 ├── router-on-a-stick_project.pkt
-├── topology/topology.png
+├── images/topology.png
 ├── configs/
-│   ├── router.txt
+│   ├── Router.txt
 │   ├── S1.txt
 │   ├── S2.txt
 │   └── S3.txt
-└── screenshots/
+
 ```
 Open the `.pkt` file with Cisco Packet Tracer to explore the lab.
 
