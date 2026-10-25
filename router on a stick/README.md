@@ -102,9 +102,9 @@ ip dhcp pool VLAN20_POOL
 
 | Test | Proves | Evidence |
 | :--- | :--- | :--- |
-| **Same VLAN, across switches** (e.g. S1 host to S2 host) | VLAN propagation over the 802.1Q trunks | ![](screenshots/same-vlan-ping.png) |
-| **Different VLAN, same switch** (HR to IT on S1) | Router-on-a-stick inter-VLAN routing | ![](screenshots/cross-vlan-ping-same-switch.png) |
-| **Different VLAN, across switches** | Routing and trunking together | ![](images/cross-vlan-ping.png) |
+| **Same VLAN, across switches** (e.g. S1 host to S2 host) | VLAN propagation over the 802.1Q trunks | ![](images/samevlandiffswitch.png) |
+| **Different VLAN, same switch** (HR to IT on S1) | Router-on-a-stick inter-VLAN routing | ![](images/sameswitchcrossvlan.png) |
+| **Different VLAN, across switches** | Routing and trunking together | ![](images/diffvlandiffswitch.png) |
 | **`tracert` to a host in the other VLAN** | Traffic passes through the router gateway | ![](images/tracert.png) |
 
 **Reading the results**
